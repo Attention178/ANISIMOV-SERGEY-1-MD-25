@@ -1,6 +1,7 @@
 n = int(input("Введите числа n: "))
-a= ""
-for i in range(n):
+x = ""
+a = ""
+while x!="стоп":
+    a+=str(x+" ")
     x = input("Введите слово:")
-    a = str(a + x + " ")
 print(a)
