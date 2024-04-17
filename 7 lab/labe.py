@@ -25,13 +25,13 @@ def task3_1(img,k):
     edges_smooth = img_gray_smooth.filter(ImageFilter.FIND_EDGES)
     edges_smooth.save(names[k])
 def task3():
-    img = Image.open(r'D:\Sviridenko-1-MD-25_1\LAB7\3_1.jpg')
+    img = Image.open()
     task3_1(img,1)
-    img = Image.open(r'D:\Sviridenko-1-MD-25_1\LAB7\3_2.jpg')
+    img = Image.open()
     task3_1(img,2)
-    img = Image.open(r'D:\Sviridenko-1-MD-25_1\LAB7\3_3.png')
-    img = Image.open(r'D:\Sviridenko-1-MD-25_1\LAB7\3_4.jpg')
+    img = Image.open()
+    img = Image.open()
     task3_1(img,4)
-    img = Image.open(r'D:\Sviridenko-1-MD-25_1\LAB7\3_5.png')
+    img = Image.open()
 
 task3()
