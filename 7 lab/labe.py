@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 def task1():
     img = Image.open(r'D:\UserFolders\Downloads\grass.jpg')
     img.show()
@@ -20,18 +20,31 @@ def task2():
 
 def task3_1(img,k):
     from PIL import ImageFilter
-    names = ['1.jpg','2.jpg','3.png','4.jpg','5.png']
+    names = ['grass.jpg','planeta.jpg','luna.jpg','cosmos.jpg']
     img_gray_smooth = img.filter(ImageFilter.SMOOTH)
     edges_smooth = img_gray_smooth.filter(ImageFilter.FIND_EDGES)
     edges_smooth.save(names[k])
 def task3():
-    img = Image.open()
+    img = Image.open(r'D:\UserFolders\Downloads\grass.jpg')
+    task3_1(img,0)
+    img = Image.open(r'D:\UserFolders\Downloads\luna.jpg')
     task3_1(img,1)
-    img = Image.open()
+    img = Image.open(r'D:\UserFolders\Downloads\planeta.jpg')
     task3_1(img,2)
-    img = Image.open()
-    img = Image.open()
-    task3_1(img,4)
-    img = Image.open()
+    img = Image.open(r'D:\UserFolders\Downloads\cosmos.jpg')
+    task3_1(img,3)
 
-task3()
+
+def task4():
+    image = Image.open("grass.jpg")
+
+    font = ImageFont.truetype("arial.ttf", 55)
+    drawer = ImageDraw.Draw(image)
+    drawer.text((50, 100), "УРА УРА УРА УРА УРА УРА УРА УУУУУУУУУУУУУУУ!", font=font, fill='white')
+
+    image.save('new_img.jpg')
+    image.show()
+task4()
+
+
+
