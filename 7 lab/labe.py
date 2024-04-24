@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 def task1():
-    img = Image.open(r'D:\UserFolders\Downloads\grass.jpg')
+    img = Image.open(r'D:\UserFolders\Downloads\pupu.jpg')
     img.show()
     print(img.format)
     print(img.size)
@@ -44,7 +44,27 @@ def task4():
 
     image.save('new_img.jpg')
     image.show()
-task4()
 
 
+def task5():
+    img = Image.open(r'D:\UserFolders\Downloads\pupu.jpg')
+    img_crop = img.crop((100, 75, 1000, 700))
+    img_crop.save('puta.jpg', quality=100)
 
+
+def task6():
+        cards = {
+            'день рождения': r'D:\UserFolders\Downloads\dr.jpg',
+            'свадьба': r'D:\UserFolders\Downloads\sv.jpg',
+            '23 февраля': r'D:\UserFolders\Downloads\des.jpg',
+            '8 марта': r'D:\UserFolders\Downloads\8.jpg'
+        }
+        print(cards.keys())
+        user = input("На какой праздник вам нужна открытка?\nВыберите из подходящую списка: ")
+        try:
+            card_day = cards[user]
+        except LookupError:
+            print("На данный праздник у нас нет открыток! Пошел вон от сюда!")
+        else:
+            img = Image.open(card_day)
+            img.show()
